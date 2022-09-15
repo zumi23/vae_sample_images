@@ -1,0 +1,105 @@
+<% provide(:title, 'Pokemon index') %>
+<h1>Pokemon index</h1>
+
+<h3>検索条件</h3>
+<div class="row">
+  <%= form_tag({controller:"pokemons",action:"index"}, method: :get) do %>
+    <div class="col-md-1">
+      <label for="type">タイプ：</label>
+    </div>
+    <div class="col-md-4">
+      <%= select_tag("search_type", options_for_select(@type_hash.invert), :selected => -1) %>
+    </div>
+    <div class="col-md-1">
+      <label for="egg">タマゴ：</label>
+    </div>
+    <div class="col-md-4">
+      <%= select_tag("search_egg", options_for_select(@egg_hash.invert), :selected => -1) %>
+    </div>
+    <div class="col-md-2">
+      <%= submit_tag '検索'  %>
+    </div>
+  <% end %>
+</div>
+
+<div id="gray-back">
+  <h3>検索結果</h3>
+  <div class="row">
+    <div class="col-md-1">
+      <h6>タイプ：</h6>
+    </div>
+    <div class="col-md-4">
+      <%= @type_hash[@s_t] %>
+    </div>
+    <div class="col-md-1">
+      <h6>タマゴ：</h6>
+    </div>
+    <div class="col-md-4">
+      <%= @egg_hash[@s_e] %>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+
+
+<!--
+<h3>検索条件</h3>
+<%= form_tag({controller:"pokemons",action:"index"}, method: :get) do %>
+  <h6>タイプ</h6>
+  <%= select_tag("search_type", options_for_select(@type_hash.invert), :selected => -1) %>
+  <h6>タマゴ</h6>
+  <%= select_tag("search_egg", options_for_select(@egg_hash.invert), :selected => -1) %>
+  <%= submit_tag '検索'  %>
+<% end %>
+-->
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">名前</th>
+      <th scope="col">タイプ1</th>
+      <th scope="col">タイプ2</th>
+      <th scope="col">タマゴ1</th>
+      <th scope="col">タマゴ2</th>
+      <!--
+      <th scope="col">たかさ</th>
+      <th scope="col">おもさ</th>
+      <th scope="col">HP</th>
+      <th scope="col">こうげき</th>
+      <th scope="col">ぼうぎょ</th>
+      <th scope="col">とくこう</th>
+      <th scope="col">とくぼう</th>
+      <th scope="col">すばやさ</th>
+      -->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <th scope="row"><%= pokemon.name_id %></td>
+        <td><%= link_to pokemon.name, pokemon %></td>
+        <td><span class="badge badge-pill"><%= @type_hash[pokemon.type1_id] %></span></td>
+        <td><span class="badge badge-pill"><%= @type_hash[pokemon.type2_id] %></span></td>
+        <td><span class="badge badge-pill"><%= @egg_hash[pokemon.egg1_id] %></span></td>
+        <td><span class="badge badge-pill"><%= @egg_hash[pokemon.egg2_id] %></span></td>
+        <!--
+        <td><%= pokemon.height %></td>
+        <td><%= pokemon.weight %></td>
+        <td><%= pokemon.h_param %></td>
+        <td><%= pokemon.a_param %></td>
+        <td><%= pokemon.b_param %></td>
+        <td><%= pokemon.c_param %></td>
+        <td><%= pokemon.d_param %></td>
+        <td><%= pokemon.s_param %></td>
+        -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="pagination_center">
+  <%= paginate(@pokemons) %>
+</div>

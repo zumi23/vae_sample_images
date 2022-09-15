@@ -1,0 +1,2 @@
+class Eqp < ApplicationRecord
+end

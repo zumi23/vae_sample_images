@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./src/db/mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  web:
+    image: zumi23/vae_sample_images:1.1
+    # build: .
+    # command: /bin/bash -c "yarn upgrade && rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: /bin/bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./src:/app
+    ports:
+      - "53000:3000" # local:container
+    environment:
+      RAILS_ENV: development
+    depends_on:
+      - db

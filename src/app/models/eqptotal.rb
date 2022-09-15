@@ -1,0 +1,2 @@
+class Eqptotal < ApplicationRecord
+end

@@ -1,0 +1,22 @@
+white,#fff,100
+light cyan,#cff,100
+light blue,#ccf,100
+light magenta,#fcf,100
+light red,#fcc,100
+light yellow,#ffc,100
+light green,#cfc,100
+gray,#ccc,80
+cyan,#0cc,80
+blue,#00c,80
+magenta,#c0c,80
+red,#c00,80
+yellow,#cc0,80
+green,#0c0,80
+dark gray,#666,40
+dark cyan,#066,40
+dark blue,#006,40
+dark magenta,#606,40
+dark red,#600,40
+dark yellow,#660,40
+dark green,#060,40
+black,#000,0
