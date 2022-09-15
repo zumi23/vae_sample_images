@@ -1,2 +1,0 @@
-class Eqptotal < ApplicationRecord
-end
