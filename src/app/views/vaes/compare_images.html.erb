@@ -1,0 +1,93 @@
+<% provide(:title, 'Compare Images') %>
+
+<div class="center">
+  <h1>Compare Images</h1>
+</div>
+
+<div class="row">
+  <%= form_tag({controller:"vaes",action:"compare_images"}, method: :get) do %>
+    <div class="col-md-1 center">
+    </div>
+    <div class="col-md-2 center">
+      <label>Select Model 1 </label><br>
+      <label>Select Model 2 </label>
+    </div>
+    <div class="col-md-2 center">
+      <label for="conv">convolutional layer: </label><br>
+      <label for="conv">convolutional layer: </label>
+    </div>
+    <div class="col-md-1 center">
+      <%= select_tag("conv1", options_for_select(@conv_ary), :selected => "x") %>
+      <%= select_tag("conv2", options_for_select(@conv_ary), :selected => "x") %>
+    </div>
+    <div class="col-md-1 center">
+      <label for="conv">Nz: </label><br>
+      <label for="conv">Nz: </label>
+    </div>
+    <div class="col-md-1 center">
+      <%= select_tag("nz1", options_for_select(@nz_ary), :selected => 1) %>
+      <%= select_tag("nz2", options_for_select(@nz_ary), :selected => 1) %>
+    </div>
+    <div class="col-md-2 center">
+      <label for="conv">Select Label: </label>
+    </div>
+    <div class="col-md-2">
+      <%= select_tag("label", options_for_select(@label_hash), :selected => "T-shirt/top") %>
+      <%= submit_tag 'Search'  %>
+    </div>
+  <% end %>
+</div>
+
+<div id="lightblue-back" class="row_margin">
+  <div class="row">
+    <div class="col-md-1 center">
+    </div>
+    <div class="col-md-2 center">
+      <label>Selected Model 1 </label><br>
+      <label>Selected Model 2 </label>
+    </div>
+    <div class="col-md-2 center">
+      <label for="conv">convolutional layer: </label><br>
+      <label for="conv">convolutional layer: </label>
+    </div>
+    <div class="col-md-1 center">
+      <%= @conv1 %><br>
+      <%= @conv2 %>
+    </div>
+    <div class="col-md-1 center">
+      <label for="conv">Nz: </label><br>
+      <label for="conv">Nz: </label>
+    </div>
+    <div class="col-md-1 center">
+      <%= @nz1 %><br>
+      <%= @nz2 %>
+    </div>
+    <div class="col-md-2 center">
+      <label for="conv">Selected Label: </label>
+    </div>
+    <div class="col-md-2 center">
+      <%= @label %>
+    </div>
+  </div>
+</div>
+
+<div class="row row_margin">
+  <div class="col-md-1 center">
+    <%#= link_to image_tag("r/0.png", width: "150px"), "#" %>
+  </div>
+  <div class="col-md-3 center col_margin">
+    <%= link_to image_tag("#{@path0}", width: "250px"), "#" %>
+    <h3>Real Images</h3>
+  </div>
+  <div class="col-md-3 center col_margin">
+    <%= link_to image_tag("#{@path1}", width: "250px"), "#" %>
+    <h3>Generated Images (Model 1)</h3>
+  </div>
+  <div class="col-md-3 center col_margin">
+    <%= link_to image_tag("#{@path2}", width: "250px"), "#" %>
+    <h3>Generated Images (Model 2)</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%#= link_to image_tag("r/0.png", width: "150px"), "#" %>
+  </div>
+</div>

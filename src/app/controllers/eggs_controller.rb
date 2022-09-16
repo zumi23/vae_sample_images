@@ -1,2 +1,0 @@
-class EggsController < ApplicationController
-end

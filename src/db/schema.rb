@@ -10,83 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_14_142715) do
-
-  create_table "colors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.string "code"
-    t.integer "brightness"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "eggs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "egg_id"
-    t.string "egg_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "eqp1s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "param_d"
-    t.integer "param_md"
-    t.integer "param_1"
-    t.integer "param_2"
-    t.integer "param_3"
-    t.integer "param_4"
-    t.integer "param_5"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "eqp2s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "param_d"
-    t.integer "param_md"
-    t.integer "param_1"
-    t.integer "param_2"
-    t.integer "param_3"
-    t.integer "param_4"
-    t.integer "param_5"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "eqp3s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "param_d"
-    t.integer "param_md"
-    t.integer "param_1"
-    t.integer "param_2"
-    t.integer "param_3"
-    t.integer "param_4"
-    t.integer "param_5"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "eqps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "eqp_id"
-    t.integer "def"
-    t.integer "mdef"
-    t.integer "param_0"
-    t.integer "param_1"
-    t.integer "param_2"
-    t.integer "param_3"
-    t.integer "param_4"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "eqptotals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "param_d"
-    t.integer "param_md"
-    t.integer "param_1"
-    t.integer "param_2"
-    t.integer "param_3"
-    t.integer "param_4"
-    t.integer "param_5"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2022_08_21_144707) do
 
   create_table "microposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
@@ -97,25 +21,6 @@ ActiveRecord::Schema.define(version: 2022_09_14_142715) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
-  create_table "pokemons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "name_id"
-    t.string "name"
-    t.integer "type1_id"
-    t.integer "type2_id"
-    t.integer "egg1_id"
-    t.integer "egg2_id"
-    t.float "height"
-    t.float "weight"
-    t.integer "h_param"
-    t.integer "a_param"
-    t.integer "b_param"
-    t.integer "c_param"
-    t.integer "d_param"
-    t.integer "s_param"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
@@ -124,13 +29,6 @@ ActiveRecord::Schema.define(version: 2022_09_14_142715) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
-  end
-
-  create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "type_id"
-    t.string "type_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|

@@ -1,34 +1,20 @@
 <% if logged_in? %>
+  <div class="center">
+    <h1>VAE Model</h1>
+    <%= link_to image_tag("numakuro.png", alt: "Numa", width: "600px"),
+                        "#" %>
+  </div>
   <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
+    <div class="col-md-4 center">
+      <%= render 'layouts/form' %>
     </div>
   </div>
 <% else %>
   <div class="center jumbotron">
-    <h1>Poke List Home</h1>
-
-    <h2>
-      sample text
-      <a href="#">link</a>
-      sample text
-    </h2>
+    <h1>VAE Sample Images Home</h1>
+    <p></p>
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   </div>
 
-  <%= link_to image_tag("numakuro.png", alt: "Numa", width: "200px"),
-                        "#" %>
 <% end %>

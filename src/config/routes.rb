@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
-  root 'static_pages#home'
+  root 'vaes#home'
   get  '/help',    to: 'static_pages#help'
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
-  get  '/color',    to: 'static_pages#color'
   get  '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new' # 新しいセッションのページ（ログイン）
   post   '/login',   to: 'sessions#create' # 新しいセッションの作成（ログイン）
@@ -17,9 +16,12 @@ Rails.application.routes.draw do
   end
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
-  
-  resources :pokemons
-  resources :eqps
+
+  get  '/real_img_sample',    to: 'vaes#real_image_sample'
+  get  '/gen_img_sample',    to: 'vaes#generated_image_sample'
+  get  '/repara',    to: 'vaes#repara'
+  get  '/nz_mapping',    to: 'vaes#nz_mapping'
+  get  '/compare_images',    to: 'vaes#compare_images'
 
   # GETリクエストが /signup に送信されたときに
   # Usersコントローラーのnewアクションを呼び出す

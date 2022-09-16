@@ -1,0 +1,114 @@
+<% provide(:title, 'Generated Image Sample') %>
+
+<div class="center">
+  <h1>Generated Image Sample</h1>
+</div>
+
+<div class="row">
+  <%= form_tag({controller:"vaes",action:"generated_image_sample"}, method: :get) do %>
+    <div class="col-md-1 center">
+    </div>
+    <div class="col-md-2 center">
+      <label>Select Model </label>
+    </div>
+    <div class="col-md-2 center">
+      <label for="conv">convolutional layer: </label>
+    </div>
+    <div class="col-md-1 center">
+      <%= select_tag("conv", options_for_select(@conv_ary), :selected => "x") %>
+    </div>
+    <div class="col-md-1 center">
+      <label for="conv">Nz: </label>
+    </div>
+    <div class="col-md-1 center">
+      <%= select_tag("nz", options_for_select(@nz_ary), :selected => 1) %>
+    </div>
+    <div class="col-md-2 center">
+      <%= submit_tag 'Search'  %>
+    </div>
+    <div class="col-md-2">
+    </div>
+  <% end %>
+</div>
+
+<div id="lightblue-back" class="row_margin">
+  <div class="row">
+    <div class="col-md-1 center">
+    </div>
+    <div class="col-md-2 center">
+      <label>Selected Model </label>
+    </div>
+    <div class="col-md-2 center">
+      <label for="conv">convolutional layer: </label>
+    </div>
+    <div class="col-md-1 center">
+      <%= @conv %>
+    </div>
+    <div class="col-md-1 center">
+      <label for="conv">Nz: </label>
+    </div>
+    <div class="col-md-1 center">
+      <%= @nz %>
+    </div>
+    <div class="col-md-4 center">
+    </div>
+  </div>
+</div>
+
+<div class="row row_margin">
+  <div class="col-md-1 center">
+    <%#= link_to image_tag("r/0.png", width: "150px"), "#" %>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/0.png", width: "150px"), "#" %>
+    <h3>T-shirt/top</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/1.png", width: "150px"), "#" %>
+    <h3>Trouser</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/2.png", width: "150px"), "#" %>
+    <h3>Pullover</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/3.png", width: "150px"), "#" %>
+    <h3>Dress</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/4.png", width: "150px"), "#" %>
+    <h3>Coat</h3>
+  </div>
+  <div class="col-md-1 center">
+    <%#= link_to image_tag("r/0.png", width: "150px"), "#" %>
+  </div>
+</div>
+
+<div class="row row_margin">
+  <div class="col-md-1 center">
+    <%#= link_to image_tag("r/0.png", width: "150px"), "#" %>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/5.png", width: "150px"), "#" %>
+    <h3>Sandal</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/6.png", width: "150px"), "#" %>
+    <h3>Shirt</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/7.png", width: "150px"), "#" %>
+    <h3>Sneaker</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/8.png", width: "150px"), "#" %>
+    <h3>Bag</h3>
+  </div>
+  <div class="col-md-2 center">
+    <%= link_to image_tag("#{@path_format}/9.png", width: "150px"), "#" %>
+    <h3>Ankle boot</h3>
+  </div>
+  <div class="col-md-1 center">
+    <%#= link_to image_tag("r/0.png", width: "150px"), "#" %>
+  </div>
+</div>

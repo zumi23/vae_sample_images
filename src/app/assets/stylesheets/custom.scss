@@ -74,7 +74,7 @@ p {
 /* navbar */
 
 .navbar {
-  background-color: #600;
+  background-color: #006;
 }
 
 /* header li_5.9 */
@@ -103,9 +103,9 @@ footer {
   border-top: 1px solid #eaeaea;
   color: #777;
   a {
-    color: #0ff;
+    color: #ccc;
     &:hover {
-      color: #00f;
+      color: #000;
     }
   }
 
@@ -302,16 +302,19 @@ span.image {
   text-align: center;
 }
 
-/* poke_index */
+/* vaes */
 
-#gray-back{
-  background-color: #fcc;
+#lightblue-back{
+  background-color: #ccf;
   padding: 10px 50px;
-  border: 5px solid #c00
+  border: 5px solid #00c;
 }
 
-/* test */
+.row_margin {
+  margin-bottom: 30px;
+  /* border: 5px solid #c00; */
+}
 
-#aaaa {
-  color: #c0c;
+.col_margin {
+  margin: 0px, 30px;
 }
